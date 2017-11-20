@@ -1,0 +1,20 @@
+.layout-sidebar-right {
+  .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }//inner-wrap
+  .content-main {
+    flex: 0 0 65%;
+  }//content-main
+  .comments {
+    margin-top: 3%;
+    padding: 2%;
+    background: #eee;
+  }//comments
+  .right {
+    flex: 0 0 30%;
+    ul { @extend %ul-zero; }
+  }//right
+}//layout-sidebar-right
