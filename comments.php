@@ -1,12 +1,12 @@
 <?php if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return; ?>
 <section id="comments">
-<?php 
-if ( have_comments() ) : 
+<?php
+if ( have_comments() ) :
 global $comments_by_type;
 $comments_by_type = &separate_comments( $comments );
-if ( ! empty( $comments_by_type['comment'] ) ) : 
+if ( ! empty( $comments_by_type['comment'] ) ) :
 ?>
-<section id="comments-list" class="comments">
+<section id="comments-list">
 <h3 class="comments-title"><?php comments_number(); ?></h3>
 <?php if ( get_comment_pages_count() > 1 ) : ?>
 <nav id="comments-nav-above" class="comments-navigation" role="navigation">
@@ -22,10 +22,10 @@ if ( ! empty( $comments_by_type['comment'] ) ) :
 </nav>
 <?php endif; ?>
 </section>
-<?php 
-endif; 
-if ( ! empty( $comments_by_type['pings'] ) ) : 
-$ping_count = count( $comments_by_type['pings'] ); 
+<?php
+endif;
+if ( ! empty( $comments_by_type['pings'] ) ) :
+$ping_count = count( $comments_by_type['pings'] );
 ?>
 <section id="trackbacks-list" class="comments">
 <h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'wxtheme' ) : __( 'Trackback', 'wxtheme' ) ); ?></h3>
@@ -33,8 +33,8 @@ $ping_count = count( $comments_by_type['pings'] );
 <?php wp_list_comments( 'type=pings&callback=wxtheme_custom_pings' ); ?>
 </ul>
 </section>
-<?php 
-endif; 
+<?php
+endif;
 endif;
 if ( comments_open() ) comment_form();
 ?>

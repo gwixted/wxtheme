@@ -4,11 +4,14 @@ $headerHeight: 100px;
 $headerHeightMed: 70px;
 
 #content {
-  @include ptb(145px,3%);
+  @include ptb(140px,3%);
+  @include breakpoint(lg) { // 890 - LARGE =================================
+    @include ptb(100px,4%);
+  }//large
 }//content
 
 .outer-wrap {
-  
+
 }//outer-wrap
 
 .inner-wrap {
@@ -52,13 +55,11 @@ header#header {
   // nav#menu in _navigation.scss
   .mobile-trigger {
     display: none;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 2.0em;
+    text-align: center;
     cursor: pointer;
-    div {
-      margin-left: 15px;
-      align-self: center;
-    }//div
+    div { align-self: center; }
     .close { display: none; }
     &.vis {
       .burger { display: none; }
@@ -66,30 +67,30 @@ header#header {
     }//vis
   }//mobile-trigger
   @include breakpoint(xxlg) { // 1200 - XXLARGE =================================
-  
+
   }//xxlarge
-  
+
   @include breakpoint(xlg) { // 1024 - XLARGE =================================
-    
+
   }//xlarge
-  
+
   @include breakpoint(lg) { // 890 - LARGE =================================
     height: $headerHeightMed;
     a.logo { max-width: 140px; }
     nav#menu { display: none; }
     .mobile-trigger { display: flex; }
   }//large
-  
+
   @include breakpoint(med) { // 768 - MEDIUM =================================
     .logged-in & { top: 46px; }
   }//medium
-  
+
   @include breakpoint(small) { // 667 - SMALL ================================
-  
+
   }//small
-  
+
   @include breakpoint(xsmall) { // 480 - XSMALL ================================
-  
+
   }//xsmall
 }//header#header
 
@@ -102,7 +103,7 @@ footer#footer {
     justify-content: flex-end;
     align-items: center;
     font-size: 2.0em;
-    li { margin-left: 15px; }
+    li { margin-left: 25px; }
     a {
       color: $primary;
       &:hover { color: lighten($primary,10%); }
@@ -120,7 +121,7 @@ footer#footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9); 
+  background: rgba(0,0,0,0.9);
   opacity: 0;
   @extend %dtransfast;
   z-index: -1;
